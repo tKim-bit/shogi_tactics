@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>将棋戦法一覧</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2A4073",
+                        "background-light": "#F8F7F4",
+                        "background-dark": "#181a1b",
+                        "text-light": "#333333",
+                        "text-dark": "#d8d4cf",
+                        "accent-light": "#9E2C2C",
+                        "accent-dark": "#c75454",
+                        "border-light": "#e5e2d9",
+                        "border-dark": "#3a3f42"
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif JP", "serif"],
+                        "sans": ["Noto Sans JP", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Noto Serif JP', serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 px-4 md:px-0">
+<div class="w-full">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[300px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4" data-alt="Abstract image with a traditional Japanese paper (washi) texture" style='background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIuDy8LlpOufyTbXQjr7VQQtg27d1l5DsV0izkZvM73L-ZP_ABJWm3M5t8n5OZa_RAnRgFI5JbID9Vk487MBKMtiBW4qxiN1By1wu9NjChTMigfHaDE0LENf_nSacJcacaFw-J1_-7y3pLy-OQ7Jrjj0HFugnOfNzxn2vy0meRk98o1Wv96gHB8dtY0PAFk6JY9fApK8lw9UsKY7gh8WFM8f6W9l7RAzDxB7B91r8HiNkYi8EqVkkH_eucSdKZpWVs0GPju6PSyjs");'>
+<div class="flex flex-col gap-2 text-center">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] font-display">将棋戦法一覧</h1>
+<h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal font-sans">古今東西の主要な戦法を探求する</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="py-10 px-4">
+<div class="flex flex-col md:flex-row gap-4 items-center">
+<div class="relative w-full md:flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-white/80 dark:bg-black/20 py-2 pl-10 pr-4 focus:border-primary focus:ring-primary font-sans" placeholder="戦法名で検索..." type="text"/>
+</div>
+<div class="relative w-full md:w-auto">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">filter_list</span>
+<select class="w-full md:w-48 appearance-none rounded-lg border-border-light dark:border-border-dark bg-white/80 dark:bg-black/20 py-2 pl-10 pr-8 focus:border-primary focus:ring-primary font-sans">
+<option>全てのカテゴリ</option>
+<option>居飛車</option>
+<option>振り飛車</option>
+<option>奇襲戦法</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-16 pb-10">
+<div>
+<h2 class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 font-display border-b-2 border-primary">居飛車 (Ibisha)</h2>
+<div class="grid grid-cols-1 @[480px]:grid-cols-2 @[768px]:grid-cols-3 gap-6 pt-8 px-4">
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-primary font-display mb-2">相掛かり</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">互いに飛車先の歩を突き合い、飛車を浮き飛車や引き飛車に構える、最も原始的な戦型の一つ。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-primary group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-primary font-display mb-2">角換わり</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">序盤早々に角を交換し、互いに角を持ち駒にして戦う戦法。現代将棋の主流の一つ。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-primary group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-primary font-display mb-2">矢倉</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">金銀3枚で玉を固く囲う「矢倉囲い」を目指す、相居飛車の代表的な戦法。かつては純文学と称された。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-primary group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h2 class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 font-display border-b-2 border-primary">振り飛車 (Furibisha)</h2>
+<div class="grid grid-cols-1 @[480px]:grid-cols-2 @[768px]:grid-cols-3 gap-6 pt-8 px-4">
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-primary font-display mb-2">四間飛車</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">飛車を左から4筋目に振る、振り飛車の中でも最もポピュラーでバランスの取れた戦法。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-primary group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-primary font-display mb-2">三間飛車</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">飛車を3筋目に振る戦法。石田流など、攻めに特化した変化が多いのが特徴。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-primary group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-primary font-display mb-2">中飛車</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">飛車を中央の5筋に振る戦法。ゴキゲン中飛車など、現代でも進化を続ける有力戦法。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-primary group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h2 class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 font-display border-b-2 border-accent-light dark:border-accent-dark">奇襲戦法 (Surprise Attack)</h2>
+<div class="grid grid-cols-1 @[480px]:grid-cols-2 @[768px]:grid-cols-3 gap-6 pt-8 px-4">
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-accent-light dark:text-accent-dark font-display mb-2">鬼殺し</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">角道を開けずに銀を繰り出し、相手の角頭を直接狙う大胆不敵な戦法。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-accent-light dark:text-accent-dark group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-accent-light dark:text-accent-dark font-display mb-2">嬉野流</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">左銀を5七に上がり、角道を開けずに戦いを起こす、アマチュア発のユニークな戦法。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-accent-light dark:text-accent-dark group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+<a class="group flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="p-5 flex-grow">
+<h3 class="text-lg font-bold text-accent-light dark:text-accent-dark font-display mb-2">早石田流</h3>
+<p class="text-sm font-normal leading-relaxed text-text-light dark:text-text-dark font-sans">三間飛車から7筋の歩を突き、飛車・角・桂馬で一気に攻め潰すことを狙う急戦策。</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-3 text-right">
+<span class="text-sm font-bold text-accent-light dark:text-accent-dark group-hover:underline font-sans">詳細を見る →</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

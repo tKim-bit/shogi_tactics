@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>振り飛車戦法 - 将棋戦法</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2E4057",
+              "background-light": "#F8F5F0",
+              "background-dark": "#111921",
+              "text-light": "#333333",
+              "text-dark": "#E0E0E0",
+              "subtle-light": "#4e7397",
+              "subtle-dark": "#9cb3c9",
+              "accent": "#B89B72",
+            },
+            fontFamily: {
+              "sans": ["Noto Sans JP", "sans-serif"],
+              "display": ["Noto Serif JP", "serif"],
+            },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      .font-display {
+        font-family: 'Noto Serif JP', serif;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-center whitespace-nowrap border-b border-solid border-black/10 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center justify-between px-4 sm:px-10 py-3 w-full max-w-5xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">chess</span>
+<h2 class="text-lg font-bold font-display leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark">将棋戦法</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#">ホーム</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#">戦法一覧</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#">駒の種類</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-accent" href="#">棋士紹介</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<span class="truncate">お問い合わせ</span>
+</button>
+</div>
+<button class="md:hidden flex items-center justify-center size-10 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-5 px-4 sm:px-6">
+<div class="layout-content-container flex flex-col w-full max-w-4xl flex-1">
+<div class="flex flex-wrap gap-2 p-4">
+<a class="text-subtle-light dark:text-subtle-dark text-sm font-medium leading-normal hover:underline" href="#">ホーム</a>
+<span class="text-subtle-light dark:text-subtle-dark text-sm font-medium leading-normal">/</span>
+<a class="text-subtle-light dark:text-subtle-dark text-sm font-medium leading-normal hover:underline" href="#">戦法一覧</a>
+<span class="text-subtle-light dark:text-subtle-dark text-sm font-medium leading-normal">/</span>
+<span class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">振り飛車</span>
+</div>
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="font-display text-4xl font-black leading-tight tracking-[-0.033em] text-text-light dark:text-text-dark">振り飛車戦法</p>
+<p class="text-subtle-light dark:text-subtle-dark text-base font-normal leading-relaxed">振り飛車は、将棋の戦法の一つであり、飛車を初期位置から左側に振って戦う指し方の総称です。その魅力と基本を解説します。</p>
+</div>
+</div>
+<article class="flex flex-col gap-10 mt-6">
+<section>
+<h2 class="font-display text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b-2 border-accent">歴史</h2>
+<p class="text-base font-normal leading-relaxed pb-3 pt-4 px-4">振り飛車の歴史は古く、江戸時代から指されてきました。特に、大山康晴十五世名人が得意とし、その全盛期を築きました。現代でも多くの棋士に愛され、進化を続けている戦法です。</p>
+</section>
+<section>
+<h2 class="font-display text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b-2 border-accent">主な種類</h2>
+<div class="mt-4 px-4 flex flex-col gap-4">
+<!-- Tabs -->
+<div class="flex border-b border-black/10 dark:border-white/10">
+<button class="px-5 py-2 text-sm font-bold text-primary border-b-2 border-primary">四間飛車</button>
+<button class="px-5 py-2 text-sm font-medium text-subtle-light dark:text-subtle-dark hover:bg-black/5 dark:hover:bg-white/5 rounded-t-lg">三間飛車</button>
+<button class="px-5 py-2 text-sm font-medium text-subtle-light dark:text-subtle-dark hover:bg-black/5 dark:hover:bg-white/5 rounded-t-lg">中飛車</button>
+</div>
+<!-- Tab Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start py-4">
+<div>
+<h3 class="font-display text-xl font-bold text-text-light dark:text-text-dark">四間飛車 (しけんびしゃ)</h3>
+<p class="text-base font-normal leading-relaxed mt-2">最も代表的な振り飛車戦法。飛車を左から4筋目（▲６八→▲６六）に移動させます。バランスが良く、攻守に優れているため、初心者からプロまで幅広く愛用されています。</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-2 border border-black/10 dark:border-white/10 rounded-lg shadow-sm w-full max-w-sm mx-auto">
+<img class="rounded-md w-full h-auto object-cover" data-alt="A diagram of a shogi board showing the Shikenbisha formation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo4ubpicJbTnMvEIZrHQVSepQhh1Jfp_wLG7M0zzkD683gvFh49uPw_KSSuH2LXnY4U_uOpZTWGXNAhTvKdzDU0uuDYY5JxALwElEwZBvkBiBGSeN8_DuG0RgHH6zjGgLe54bJKGEmEHn-v1s-5pW2Hkote_jhSm1PY_hf4hJFIvEkSqAD71hmXQ_ClsFhS3zr2-JPygK3tY0i7A5rNUfSIHV8XeTfnm7zPr5Tr6eb6Y42zJoaK5XyLjD3IQpnzabnw-w0CwYkJJI"/>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="font-display text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b-2 border-accent">駒組みと囲い</h2>
+<div class="mt-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Komagumi Card -->
+<div class="flex flex-col bg-white/50 dark:bg-black/20 p-6 rounded-xl border border-black/10 dark:border-white/10">
+<h3 class="font-display text-lg font-bold leading-tight">駒組みの手順</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1 mb-4">序盤の数手で理想的な形を目指します。</p>
+<div class="space-y-2 text-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-6 rounded-full bg-accent text-white font-bold">1</div>
+<p>▲７六歩：角道を開ける</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-6 rounded-full bg-accent text-white font-bold">2</div>
+<p>▲６六歩：飛車を振る準備</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-6 rounded-full bg-accent text-white font-bold">3</div>
+<p>▲６八飛：四間飛車に振る</p>
+</div>
+</div>
+</div>
+<!-- Kakoi Card -->
+<div class="flex flex-col bg-white/50 dark:bg-black/20 p-6 rounded-xl border border-black/10 dark:border-white/10">
+<h3 class="font-display text-lg font-bold leading-tight">代表的な囲い：美濃囲い</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1 mb-4">振り飛車と相性が良く、非常に堅い守りです。</p>
+<div class="bg-background-light dark:bg-background-dark p-2 border border-black/10 dark:border-white/10 rounded-lg shadow-sm">
+<img class="rounded-md w-full h-auto object-cover" data-alt="A diagram of a shogi board showing the Mino castle formation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACubt7uAfy-Xr4EqcWs4QgunMVXmXcTZ_y1paSBQuYmDe8aqki4XJwnTbssr2TJTVzBCpF3TxL4HMqItQmsIyX6d5pDZZKZe4azVKvyaqoOUf9tPNmgHk60goONoCGM1E7YvqR5Q7s96UuZ2BMdzHLYYhDgRi2hDaR2iRAQGHmxme4XX4XmjdK3GiYBSStOUuWcrT5qIe7SpX9QhNChT83kjSwbNagqUwslmZqyxdMnf7ccsstV86j-hedLxkKw2-WO-KoLDlm464"/>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="font-display text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b-2 border-accent">関連棋譜</h2>
+<div class="mt-4 px-4 space-y-3">
+<a class="flex items-center justify-between p-4 bg-white/50 dark:bg-black/20 rounded-lg border border-transparent hover:border-accent hover:shadow-md transition-all" href="#">
+<div class="flex flex-col">
+<span class="font-bold text-text-light dark:text-text-dark">第35期竜王戦 第1局</span>
+<span class="text-sm text-subtle-light dark:text-subtle-dark">藤井聡太 竜王 vs 広瀬章人 八段</span>
+</div>
+<span class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white/50 dark:bg-black/20 rounded-lg border border-transparent hover:border-accent hover:shadow-md transition-all" href="#">
+<div class="flex flex-col">
+<span class="font-bold text-text-light dark:text-text-dark">大山康晴名局選</span>
+<span class="text-sm text-subtle-light dark:text-subtle-dark">大山康晴 十五世名人 vs 升田幸三 実力制第四代名人</span>
+</div>
+<span class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">chevron_right</span>
+</a>
+</div>
+</section>
+<div class="px-4 py-8">
+<a class="flex items-center gap-2 text-primary dark:text-accent font-medium hover:underline" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>戦法一覧に戻る</span>
+</a>
+</div>
+</article>
+</div>
+</main>
+</div>
+</div>
+</body></html>

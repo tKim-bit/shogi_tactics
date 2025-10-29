@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>将棋の奇襲戦法</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2A4073",
+              "background-light": "#F8F7F4",
+              "background-dark": "#181a1b",
+              "text-light": "#333333",
+              "text-dark": "#d8d4cf",
+              "accent-light": "#9E2C2C",
+              "accent-dark": "#c75454",
+              "border-light": "#e5e2d9",
+              "border-dark": "#3a3f42"
+            },
+            fontFamily: {
+              "display": ["Noto Serif JP", "serif"],
+              "sans": ["Noto Sans JP", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Noto Serif JP', serif;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 px-4 md:px-0">
+<!-- HeroSection -->
+<div class="w-full">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4" data-alt="Abstract image with a traditional Japanese paper (washi) texture" style='background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIuDy8LlpOufyTbXQjr7VQQtg27d1l5DsV0izkZvM73L-ZP_ABJWm3M5t8n5OZa_RAnRgFI5JbID9Vk487MBKMtiBW4qxiN1By1wu9NjChTMigfHaDE0LENf_nSacJcacaFw-J1_-7y3pLy-OQ7Jrjj0HFugnOfNzxn2vy0meRk98o1Wv96gHB8dtY0PAFk6JY9fApK8lw9UsKY7gh8WFM8f6W9l7RAzDxB7B91r8HiNkYi8EqVkkH_eucSdKZpWVs0GPju6PSyjs");'>
+<div class="flex flex-col gap-2 text-center">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] font-display">奇襲戦法</h1>
+<h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal font-sans">将棋における意表を突く戦術の世界を探る</h2>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Introduction -->
+<div class="pt-10 pb-4">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 font-display">奇襲戦法とは</h2>
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-relaxed pb-3 pt-1 px-4 font-sans">
+                        将棋における奇襲戦法とは、相手の意表を突き、通常の定跡から外れた展開に持ち込むことで、序盤で優位を築くことを目的とした戦術です。知識がない相手には絶大な効果を発揮する一方で、正しく対応されると不利になりやすいというリスクも伴います。しかし、そのスリリングな展開と一撃必殺の魅力は、多くの将棋ファンを惹きつけてやみません。
+                    </p>
+</div>
+<!-- Section: Representative Tactics -->
+<div class="pt-6 pb-4">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 font-display">代表的な奇襲戦法</h2>
+<!-- Tabs -->
+<div class="pb-3">
+<div class="flex border-b border-border-light dark:border-border-dark px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em] font-sans">鬼殺し</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em] font-sans">嬉野流</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em] font-sans">その他</p>
+</a>
+</div>
+</div>
+<!-- Tab Content: Onigoroshi -->
+<div class="px-4 py-6">
+<h3 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-1 font-display">鬼殺し (Onigoroshi)</h3>
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-relaxed pb-6 font-sans">
+                            先手番で角道を開けずに飛車先の歩を突き、斜め棒銀の要領で銀を繰り出していく奇襲戦法。相手の角頭を直接狙う大胆な構想が特徴です。
+                        </p>
+<!-- Shogi Board Diagram Component -->
+<div class="mb-6 flex flex-col items-center">
+<h4 class="text-lg font-bold mb-4 font-display text-accent-light dark:text-accent-dark">基本図</h4>
+<img alt="Shogi board diagram showing the basic setup for the Onigoroshi tactic" class="w-full max-w-md rounded-lg shadow-md border-4 border-amber-800/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMEZdoANppwTF8bEnS4vpItSDELYw9Ni41JLwYbAL0WJEJE9GxW-avravP-ORrfPguvSIygiZLhSduqafMNiRyr7jJc_91Q_uGgWWqWpJHoHKigKlsYmcenFz3bS8YrhWOPL0tviayzil8sTS6cOwxiPM_6wgG-n7ZXghAF7Q_AaKGW6TN3xXXaJ_2i2GFzmPcctQT8TIutEmYCwK_7CHJBK4W6Rwu8qwlRfkc-XHuGQhJI2CtoaBCpbgswoTa60mRXhUikdb9yHE"/>
+</div>
+<!-- Accordion/Collapsible Sections -->
+<div class="space-y-4">
+<!-- Accordion Item 1 -->
+<details class="group rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+<span class="font-bold text-primary font-sans">狙い</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-4 pt-0">
+<p class="font-sans leading-relaxed">7七の地点に角・銀・桂・飛車を集中させ、相手の守りの要である7七の角を突破することが最大の狙いです。成功すれば一気に相手玉に迫ることができます。</p>
+</div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+<span class="font-bold text-primary font-sans">対策</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-4 pt-0">
+<p class="font-sans leading-relaxed">最も有名な対策は「鬼殺しには鬼殺し返し」です。他にも、▲7七銀に△6五角と打つ手や、△8六歩と早めに飛車先を交換する指し方があります。冷静に対応すれば、攻めが単調な奇襲側が不利になります。</p>
+</div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20">
+<summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+<span class="font-bold text-primary font-sans">注意点</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-4 pt-0">
+<p class="font-sans leading-relaxed">この戦法は研究が進んでおり、対策を知っている相手には通用しにくいです。攻めが切れた後のカウンターが非常に厳しく、一度受け止められると立て直しが困難です。採用するには、相手が対策を知らないであろうという確信が必要です。</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+<!-- Section 3: General Cautions -->
+<div class="pt-6 pb-4">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 font-display">奇襲戦法を用いる上での心構え</h2>
+<div class="px-4 space-y-4">
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20">
+<h3 class="font-bold mb-2 font-display text-accent-light dark:text-accent-dark">諸刃の剣であると認識する</h3>
+<p class="font-sans leading-relaxed">奇襲は成功すれば大きいですが、失敗した時のリスクも甚大です。自玉の守りが手薄になりがちで、カウンターを受けると一気に敗勢になります。</p>
+</div>
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20">
+<h3 class="font-bold mb-2 font-display text-accent-light dark:text-accent-dark">相手を見極める</h3>
+<p class="font-sans leading-relaxed">格上や定跡に明るい相手には通用しにくいです。相手の棋力や棋風を考慮して用いるか判断することが重要です。</p>
+</div>
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark bg-white/50 dark:bg-black/20">
+<h3 class="font-bold mb-2 font-display text-accent-light dark:text-accent-dark">攻めを継続する覚悟</h3>
+<p class="font-sans leading-relaxed">奇襲を仕掛けたからには、中途半端な攻めは禁物です。多少無理だと思っても、攻めを継続して相手にプレッシャーを与え続ける覚悟が必要です。</p>
+</div>
+</div>
+</div>
+<!-- Section 4: Conclusion -->
+<div class="pt-10 pb-10">
+<h2 class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 font-display">おわりに</h2>
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-relaxed pb-3 pt-1 px-4 font-sans">
+                        奇襲戦法は、将棋の奥深さと面白さを象徴する存在です。定跡という名の舗装された道を外れ、未知の局面を自らの力で切り拓く興奮は、何物にも代えがたい魅力があります。リスクを恐れず、一局の将棋をドラマチックに演出したい方は、ぜひ一度、奇襲の世界に足を踏み入れてみてはいかがでしょうか。
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
